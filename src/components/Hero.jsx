@@ -320,7 +320,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="/resume.pdf"
+            href="//Users/anilkumar/PORTFOLIO-NISHTHA-GUPTA-BACKUP/nishtha-portfolio/src/assets/NISHTHA-GUPTA_RESUME'26.pdf"
             id="hero-download-resume"
             download
             style={{
