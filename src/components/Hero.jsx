@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, Download, Mail, MapPin, Briefcase } from 'lucide-react';
+import resumePdf from '../assets/resume.pdf';
 
 const STATS = [
   { value: '6+', label: 'Projects Built' },
@@ -320,9 +321,9 @@ export default function Hero() {
           </a>
 
           <a
-            href="//Users/anilkumar/PORTFOLIO-NISHTHA-GUPTA-BACKUP/nishtha-portfolio/src/assets/NISHTHA-GUPTA_RESUME'26.pdf"
+            href={resumePdf}
             id="hero-download-resume"
-            download
+            download="resume.pdf"
             style={{
               padding: '13px 28px',
               borderRadius: '10px',

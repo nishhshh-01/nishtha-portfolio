@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
 import { Mail, Download, MapPin, Send, Copy, Check } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
+import resumePdf from '../assets/resume.pdf';
 
 const EMAIL = 'nishthaagupta01@gmail.com';
 const GITHUB = 'https://github.com/nishhshh-01';
@@ -328,8 +329,8 @@ export default function Contact() {
 
           <AnimatedSection direction="up" delay={200}>
             <a
-              href="/resume.pdf"
-              download
+              href={resumePdf}
+              download="resume.pdf"
               id="contact-resume-download"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
