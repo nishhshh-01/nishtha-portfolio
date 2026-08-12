@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
 import { Mail, Download, MapPin, Send, Copy, Check } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
-import resumePdf from '../assets/resume.pdf';
+import resumePdf from "../assets/nishthagupta-resume.pdf";
 
 const EMAIL = 'nishthaagupta01@gmail.com';
 const GITHUB = 'https://github.com/nishhshh-01';

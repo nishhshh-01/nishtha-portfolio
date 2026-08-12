@@ -1,7 +1,64 @@
 import { useState } from 'react';
 import { AnimatedSection } from './AnimatedSection';
-import { ExternalLink, Star, Zap, Brain, Smartphone, TrendingUp, Code2, Leaf } from 'lucide-react';
+import { ExternalLink, Star, Zap, Brain, Smartphone, TrendingUp, Code2, Leaf, Globe, ShoppingBag } from 'lucide-react';
 import { GithubIcon, AndroidIcon, LinkedinIcon } from './Icons';
+
+/* ─── Google Play SVG icon ────────────────────────────────────────────── */
+function GooglePlayIcon({ size = 16, ...props }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" {...props}>
+      <path d="M3.18 23.76c.39.22.84.26 1.26.1l13.03-7.52-2.87-2.88L3.18 23.76zM.42 1.6A1.84 1.84 0 000 2.77v18.46c0 .43.14.83.42 1.17l.06.06 10.34-10.34v-.24L.48 1.54l-.06.06zM22.45 10.3l-2.78-1.6-3.13 3.13 3.13 3.13 2.8-1.6c.8-.46.8-1.6-.02-2.06zM4.44.14L17.47 7.66l-2.87 2.88L3.18.24A1.5 1.5 0 014.44.14z"/>
+    </svg>
+  );
+}
+
+/* ─── Data ─────────────────────────────────────────────────────────────── */
+const PROFESSIONAL_PROJECTS = [
+  {
+    id: 'eccura',
+    title: 'Eccura Technologies — Corporate Website',
+    subtitle: 'Professional / Client Work',
+    category: 'professional',
+    color: '#2563eb',
+    bg: 'rgba(37,99,235,0.07)',
+    badge: { text: 'Live Production Website', color: '#2563eb', bg: 'rgba(37,99,235,0.08)', border: 'rgba(37,99,235,0.2)' },
+    description:
+      'Designed and developed the corporate website for Eccura Technologies — a software company offering Custom Web Apps, Mobile Applications, AI Solutions, ERP Systems, E-Commerce, and Payment Integrations. Built a modern, responsive, production-grade web experience that showcases their products, services, and ERP ecosystem.',
+    tech: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+    highlights: [
+      'Modern responsive corporate website',
+      'Product & service showcase',
+      'ERP / product ecosystem presentation',
+      'Professional business-focused UX',
+      'Production deployment',
+    ],
+    image: '/eccura-mockup.png',
+    liveUrl: 'https://eccuratech.com/',
+    github: null,
+  },
+  {
+    id: 'joblyt',
+    title: 'Joblyt — Mobile Application',
+    subtitle: 'Mobile App / Published on Google Play',
+    category: 'professional',
+    color: '#059669',
+    bg: 'rgba(5,150,105,0.07)',
+    badge: { text: 'Published on Google Play', color: '#059669', bg: 'rgba(5,150,105,0.08)', border: 'rgba(5,150,105,0.2)' },
+    description:
+      'An all-in-one career and recruitment platform developed and published on Google Play. Connects students, freshers, job seekers, and employers — enabling job search, internship discovery, campus placements, and candidate hiring. Built end-to-end from development to production deployment.',
+    tech: ['Android', 'React Native', 'Material Design', 'Google Play'],
+    highlights: [
+      'Published & live on Google Play',
+      'Career & recruitment platform',
+      'Full development-to-deployment lifecycle',
+      'Mobile UI / UX implementation',
+      'Production app store release',
+    ],
+    image: '/joblyt-mockup.png',
+    playStoreUrl: 'https://play.google.com/store/apps/details?id=com.aamni.JobLyt',
+    github: null,
+  },
+];
 
 const PROJECTS = [
   {
@@ -101,11 +158,184 @@ const PROJECTS = [
 
 const FILTERS = [
   { id: 'all', label: 'All Projects' },
+  { id: 'professional', label: 'Professional' },
   { id: 'web', label: 'Web' },
   { id: 'mobile', label: 'Mobile' },
   { id: 'ai', label: 'AI / ML' },
 ];
 
+/* ─── Professional Card (image-based, wide) ───────────────────────────── */
+function ProfessionalCard({ project, index }) {
+  const isEccura = project.id === 'eccura';
+
+  return (
+    <AnimatedSection direction="up" delay={index * 120}>
+      <div
+        style={{
+          borderRadius: 'var(--radius-xl)',
+          border: '1px solid var(--color-border)',
+          background: 'var(--color-surface)',
+          overflow: 'hidden',
+          transition: 'all 0.3s cubic-bezier(0.22,1,0.36,1)',
+          marginBottom: '16px',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = `${project.color}40`;
+          e.currentTarget.style.transform = 'translateY(-4px)';
+          e.currentTarget.style.boxShadow = `0 20px 56px ${project.color}12`;
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = 'var(--color-border)';
+          e.currentTarget.style.transform = 'none';
+          e.currentTarget.style.boxShadow = 'none';
+        }}
+      >
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+          alignItems: 'stretch',
+          minHeight: '280px',
+        }}>
+          {/* Left — Image */}
+          <div style={{
+            background: `linear-gradient(135deg, ${project.color}10 0%, ${project.color}05 100%)`,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '24px',
+            minHeight: '240px',
+            overflow: 'hidden',
+          }}>
+            <img
+              src={project.image}
+              alt={`${project.title} preview`}
+              style={{
+                width: '100%',
+                maxWidth: isEccura ? '520px' : '480px',
+                height: isEccura ? '300px' : '280px',
+                borderRadius: '12px',
+                objectFit: 'cover',
+                objectPosition: 'top left',
+                boxShadow: `0 8px 32px ${project.color}20`,
+              }}
+            />
+          </div>
+
+          {/* Right — Content */}
+          <div style={{ padding: 'clamp(24px, 4vw, 36px)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            {/* Badge */}
+            <div style={{
+              display: 'inline-flex', alignItems: 'center', gap: '6px',
+              padding: '4px 12px', borderRadius: '100px',
+              background: project.badge.bg,
+              color: project.badge.color,
+              border: `1px solid ${project.badge.border}`,
+              fontSize: '11.5px', fontWeight: 700,
+              letterSpacing: '0.06em', textTransform: 'uppercase',
+              marginBottom: '14px', alignSelf: 'flex-start',
+            }}>
+              <span style={{
+                width: '6px', height: '6px', borderRadius: '50%',
+                background: project.badge.color, flexShrink: 0,
+              }} aria-hidden="true" />
+              {project.badge.text}
+            </div>
+
+            <h3 style={{
+              fontSize: 'clamp(17px, 2.5vw, 22px)',
+              fontWeight: 800, letterSpacing: '-0.6px',
+              color: 'var(--color-text-primary)', lineHeight: 1.15,
+              marginBottom: '6px',
+            }}>
+              {project.title}
+            </h3>
+            <div style={{ fontSize: '13px', color: 'var(--color-text-tertiary)', fontWeight: 500, marginBottom: '14px' }}>
+              {project.subtitle}
+            </div>
+
+            <p style={{
+              fontSize: 'clamp(13.5px, 1.7vw, 14.5px)',
+              color: 'var(--color-text-secondary)',
+              lineHeight: 1.7, marginBottom: '18px',
+            }}>
+              {project.description}
+            </p>
+
+            {/* Tech tags */}
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '20px' }}>
+              {project.tech.map((t) => (
+                <span key={t} style={{
+                  padding: '4px 10px', borderRadius: '6px',
+                  fontSize: '11.5px', fontWeight: 600,
+                  background: 'var(--color-surface-2)',
+                  color: 'var(--color-text-secondary)',
+                  border: '1px solid var(--color-border)',
+                  fontFamily: 'monospace',
+                }}>
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA buttons */}
+            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+              {isEccura && project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id={`proj-${project.id}-live`}
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '7px',
+                    padding: '10px 20px', borderRadius: '8px',
+                    fontSize: '13.5px', fontWeight: 600,
+                    background: 'var(--gradient-accent)',
+                    color: '#fff', textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: `0 4px 14px ${project.color}28`,
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = `0 8px 24px ${project.color}40`; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = `0 4px 14px ${project.color}28`; }}
+                >
+                  <Globe size={14} />
+                  Live Website
+                </a>
+              )}
+              {!isEccura && project.playStoreUrl && (
+                <a
+                  href={project.playStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id={`proj-${project.id}-playstore`}
+                  aria-label="View Joblyt on Google Play"
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '7px',
+                    padding: '10px 20px', borderRadius: '8px',
+                    fontSize: '13.5px', fontWeight: 600,
+                    background: 'var(--gradient-accent)',
+                    color: '#fff',
+                    textDecoration: 'none',
+                    border: 'none',
+                    transition: 'all 0.2s ease',
+                    boxShadow: `0 4px 14px ${project.color}28`,
+                    cursor: 'pointer',
+                  }}
+                  onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = `0 8px 24px ${project.color}40`; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = `0 4px 14px ${project.color}28`; }}
+                >
+                  <GooglePlayIcon size={15} />
+                  View on Google Play
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </AnimatedSection>
+  );
+}
+
+/* ─── Featured Card ───────────────────────────────────────────────────── */
 function FeaturedCard({ project }) {
   const Icon = project.icon;
 
@@ -284,6 +514,7 @@ function FeaturedCard({ project }) {
   );
 }
 
+/* ─── Project Card ────────────────────────────────────────────────────── */
 function ProjectCard({ project, index }) {
   const Icon = project.icon;
 
@@ -521,10 +752,12 @@ function ProjectCard({ project, index }) {
   );
 }
 
+/* ─── Main Section ────────────────────────────────────────────────────── */
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const featuredProject = PROJECTS.find(p => p.featured);
+  const showProfessional = activeFilter === 'all' || activeFilter === 'professional';
   const filteredProjects = PROJECTS.filter(p =>
     !p.featured && (activeFilter === 'all' || p.category === activeFilter)
   );
@@ -568,16 +801,53 @@ export default function Projects() {
           <p style={{
             fontSize: 'clamp(14px, 1.8vw, 16px)',
             color: 'var(--color-text-secondary)',
-            maxWidth: '520px',
+            maxWidth: '560px',
             lineHeight: 1.7,
           }}>
-            A curated selection of projects spanning mobile applications, full-stack platforms, and AI-powered solutions.
+            Real-world client work, published products, and personal projects — spanning mobile apps, full-stack platforms, and AI solutions.
           </p>
         </div>
       </AnimatedSection>
 
-      {/* Featured Project */}
-      {featuredProject && <FeaturedCard project={featuredProject} />}
+      {/* Professional Projects — always at top when visible */}
+      {showProfessional && (
+        <div style={{ marginBottom: '8px' }}>
+          <AnimatedSection direction="up">
+            <div style={{
+              fontSize: '11px', fontWeight: 700,
+              color: 'var(--color-text-tertiary)',
+              letterSpacing: '0.12em', textTransform: 'uppercase',
+              marginBottom: '16px',
+              display: 'flex', alignItems: 'center', gap: '10px',
+            }}>
+              <span>Real-World Work</span>
+              <div style={{ flex: 1, height: '1px', background: 'var(--color-border)' }} />
+            </div>
+          </AnimatedSection>
+          {PROFESSIONAL_PROJECTS.map((proj, i) => (
+            <ProfessionalCard key={proj.id} project={proj} index={i} />
+          ))}
+        </div>
+      )}
+
+      {/* Featured Project (QRForge) */}
+      {(activeFilter === 'all' || activeFilter === 'web') && featuredProject && (
+        <div style={{ marginTop: showProfessional ? 'clamp(32px, 4vw, 48px)' : '0' }}>
+          <AnimatedSection direction="up">
+            <div style={{
+              fontSize: '11px', fontWeight: 700,
+              color: 'var(--color-text-tertiary)',
+              letterSpacing: '0.12em', textTransform: 'uppercase',
+              marginBottom: '16px',
+              display: 'flex', alignItems: 'center', gap: '10px',
+            }}>
+              <span>Personal Projects</span>
+              <div style={{ flex: 1, height: '1px', background: 'var(--color-border)' }} />
+            </div>
+          </AnimatedSection>
+          <FeaturedCard project={featuredProject} />
+        </div>
+      )}
 
       {/* Filter Tabs */}
       <AnimatedSection delay={100}>
@@ -632,7 +902,7 @@ export default function Projects() {
         ))}
       </div>
 
-      {filteredProjects.length === 0 && (
+      {filteredProjects.length === 0 && activeFilter !== 'professional' && (
         <div style={{
           textAlign: 'center', padding: '60px 20px',
           color: 'var(--color-text-tertiary)', fontSize: '15px',

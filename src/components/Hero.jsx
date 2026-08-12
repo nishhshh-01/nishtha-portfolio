@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowDown, Download, Mail, MapPin, Briefcase } from 'lucide-react';
-import resumePdf from '../assets/resume.pdf';
+import resumePdf from '../assets/nishthagupta-resume.pdf';
 
 const STATS = [
-  { value: '6+', label: 'Projects Built' },
+  { value: '8+', label: 'Projects Built' },
   { value: '15+', label: 'Technologies' },
-  { value: '1', label: 'Professional Internship' },
-  { value: '100%', label: 'Responsive Apps' },
+  { value: '1', label: 'Published Android App' },
+  { value: '1', label: 'Client Website Live' },
 ];
 
 function TypewriterText({ texts, speed = 60, pause = 2000 }) {
@@ -254,9 +254,9 @@ export default function Hero() {
         }}>
           <TypewriterText
             texts={[
-              'Mobile App Developer',
+              'Android App Developer',
               'Full-Stack Engineer',
-              'AI Solutions Builder',
+              'Corporate Website Builder',
               'React Native Developer',
             ]}
             speed={65}
@@ -273,7 +273,7 @@ export default function Hero() {
           lineHeight: 1.7,
           fontWeight: 400,
         }}>
-          Building Mobile Applications, Full-Stack Platforms, and AI-Powered Solutions using React Native, ASP.NET Core, Next.js, SQL Server, and Modern Web Technologies.
+          Software developer building real-world web and mobile products — from corporate client websites to Android apps published on Google Play — using React Native, ASP.NET Core, Next.js, and modern web technologies.
         </p>
 
         {/* Location */}
@@ -323,7 +323,7 @@ export default function Hero() {
           <a
             href={resumePdf}
             id="hero-download-resume"
-            download="resume.pdf"
+            download="nishthagupta-resume.pdf"
             style={{
               padding: '13px 28px',
               borderRadius: '10px',

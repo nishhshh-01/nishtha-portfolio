@@ -2,6 +2,7 @@ import { AnimatedSection } from './AnimatedSection';
 import { Briefcase, MapPin, Calendar, CheckCircle2 } from 'lucide-react';
 
 const RESPONSIBILITIES = [
+  'Designed and developed the corporate website for Eccura Technologies (eccuratech.com)',
   'Developing cross-platform mobile applications using React Native',
   'Building reusable UI components and implementing pixel-perfect designs',
   'Integrating REST APIs and backend services with frontend applications',
@@ -192,7 +193,7 @@ export default function Experience() {
 
             {/* Tags */}
             <div style={{ marginTop: '24px', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {['React Native', 'ASP.NET Core', 'SQL Server', 'REST APIs', 'Mobile Dev'].map((tag) => (
+              {['React Native', 'ASP.NET Core', 'SQL Server', 'REST APIs', 'Corporate Website', 'Mobile Dev'].map((tag) => (
                 <span key={tag} style={{
                   padding: '4px 12px', borderRadius: '100px',
                   fontSize: '12px', fontWeight: 500,

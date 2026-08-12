@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useScrollProgress, useActiveSection } from '../hooks/useInView';
 import { Moon, Sun, Menu, X, Download } from 'lucide-react';
-import resumePdf from '../assets/resume.pdf';
+import resumePdf from '../assets/nishthagupta-resume.pdf';
 
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
@@ -160,7 +160,7 @@ export default function Navbar({ theme, toggleTheme }) {
           {/* Resume Button - desktop */}
           <a
             href={resumePdf}
-            download="resume.pdf"
+            download="nishthagupta-resume.pdf"
             style={{
               display: 'none',
               padding: '7px 16px',
@@ -256,7 +256,7 @@ export default function Navbar({ theme, toggleTheme }) {
         ))}
         <a
           href={resumePdf}
-          download="resume.pdf"
+          download="nishthagupta-resume.pdf"
           onClick={() => setMobileOpen(false)}
           style={{
             marginTop: '16px',
