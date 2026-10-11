@@ -244,7 +244,7 @@ export default function Contact() {
             color: 'var(--color-text-secondary)',
             maxWidth: '520px', lineHeight: 1.7,
           }}>
-            Open to internship opportunities, collaborative projects, and conversations about software engineering. Let's connect!
+            Open to mobile engineering roles, enterprise software opportunities, and full-stack collaborations. Let's connect!
           </p>
         </div>
       </AnimatedSection>

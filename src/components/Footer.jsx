@@ -54,7 +54,7 @@ export default function Footer() {
             color: 'var(--color-text-secondary)',
             lineHeight: 1.7,
           }}>
-            Building scalable mobile and web applications through clean engineering and modern technologies.
+            Mobile &amp; Full-Stack Engineer engineering cross-platform mobile architectures, enterprise APIs, and scalable backend solutions.
           </p>
         </div>
 

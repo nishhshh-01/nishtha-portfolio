@@ -3,52 +3,52 @@ import { Code2, Database, Smartphone, Server, Brain, Wrench } from 'lucide-react
 
 const SKILL_CATEGORIES = [
   {
-    id: 'frontend',
-    label: 'Frontend',
-    icon: Code2,
-    color: '#2563eb',
-    bg: 'rgba(37,99,235,0.07)',
-    skills: ['React.js', 'Next.js', 'JavaScript', 'TypeScript', 'HTML5', 'CSS3', 'Tailwind CSS'],
-  },
-  {
     id: 'mobile',
-    label: 'Mobile Dev',
+    label: 'Mobile Engineering',
     icon: Smartphone,
     color: '#7c3aed',
     bg: 'rgba(124,58,237,0.07)',
-    skills: ['React Native', 'Android Dev', 'Expo', 'Mobile UI', 'API Integration'],
+    skills: ['React Native', 'Expo', 'Mobile API Integration', 'State Management'],
+  },
+  {
+    id: 'web-frameworks',
+    label: 'Web Frameworks',
+    icon: Code2,
+    color: '#2563eb',
+    bg: 'rgba(37,99,235,0.07)',
+    skills: ['React.js', 'Next.js', 'Vite', 'Tailwind CSS'],
   },
   {
     id: 'backend',
-    label: 'Backend',
+    label: 'Backend & Security',
     icon: Server,
     color: '#0891b2',
     bg: 'rgba(8,145,178,0.07)',
-    skills: ['ASP.NET Core', 'Node.js', 'Express.js', 'REST APIs', 'Authentication', 'Authorization'],
+    skills: ['ASP.NET Core', 'Node.js', 'Express.js', 'RESTful APIs', 'Secure Authentication (JWT/OAuth)'],
   },
   {
-    id: 'databases',
-    label: 'Databases',
+    id: 'languages-databases',
+    label: 'Languages & Databases',
     icon: Database,
     color: '#059669',
     bg: 'rgba(5,150,105,0.07)',
-    skills: ['SQL Server', 'MongoDB', 'PostgreSQL', 'Supabase'],
+    skills: ['TypeScript', 'JavaScript', 'C++', 'SQL', 'MS SQL Server', 'Supabase (pgvector)'],
   },
   {
-    id: 'ai-ml',
-    label: 'AI & ML',
+    id: 'cs-fundamentals',
+    label: 'CS Fundamentals',
     icon: Brain,
     color: '#d97706',
     bg: 'rgba(217,119,6,0.07)',
-    skills: ['LLM Integration', 'RAG Architecture', 'Semantic Search', 'Vector Databases', 'TensorFlow', 'TensorFlow Lite'],
+    skills: ['Data Structures & Algorithms (DSA)', 'Object-Oriented Programming (OOP)', 'DBMS', 'Computer Networks'],
   },
   {
-    id: 'tools',
-    label: 'Tools',
+    id: 'tools-workflows',
+    label: 'Tools & Workflows',
     icon: Wrench,
     color: '#dc2626',
     bg: 'rgba(220,38,38,0.07)',
-    skills: ['Git', 'GitHub', 'VS Code', 'Figma', 'Canva', 'Antigravity', 'Cursor'],
+    skills: ['Git', 'GitHub', 'Postman (API Testing)', 'Figma UI Translation', 'Agile/Scrum'],
   },
 ];
 
@@ -184,7 +184,7 @@ export default function Skills() {
             maxWidth: '520px',
             lineHeight: 1.7,
           }}>
-            A comprehensive toolkit spanning mobile, web, backend, and AI development.
+            Technical skills tailored for cross-platform mobile architectures, enterprise APIs, secure backend systems, and web frameworks.
           </p>
         </div>
       </AnimatedSection>

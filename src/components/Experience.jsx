@@ -2,13 +2,9 @@ import { AnimatedSection } from './AnimatedSection';
 import { Briefcase, MapPin, Calendar, CheckCircle2 } from 'lucide-react';
 
 const RESPONSIBILITIES = [
-  'Designed and developed the corporate website for Eccura Technologies (eccuratech.com)',
-  'Developing cross-platform mobile applications using React Native',
-  'Building reusable UI components and implementing pixel-perfect designs',
-  'Integrating REST APIs and backend services with frontend applications',
-  'Working with ASP.NET Core and SQL Server based systems',
-  'Testing, debugging and optimizing application performance',
-  'Collaborating on production software solutions within agile workflows',
+  'Developed and maintained 2+ cross-platform mobile application modules using React Native for live production enterprise workflows.',
+  'Built 10+ highly reusable UI components and integrated 5+ secure REST API endpoints for user authentication, data synchronization, and state management.',
+  'Collaborated closely on the ASP.NET Core and SQL Server backend server layer to debug, optimize, and test data flow pipeline efficiency for client devices.',
 ];
 
 export default function Experience() {
@@ -52,7 +48,7 @@ export default function Experience() {
             maxWidth: '520px',
             lineHeight: 1.7,
           }}>
-            Hands-on experience building production software in a professional engineering environment.
+            Hands-on production experience engineering cross-platform mobile architectures, enterprise workflows, and scalable backend pipelines.
           </p>
         </div>
       </AnimatedSection>
@@ -154,7 +150,7 @@ export default function Experience() {
                   color: 'var(--color-text-tertiary)', fontSize: '13px',
                 }}>
                   <MapPin size={13} />
-                  India
+                  Bareilly, UP, India
                 </div>
               </div>
             </div>
@@ -193,7 +189,7 @@ export default function Experience() {
 
             {/* Tags */}
             <div style={{ marginTop: '24px', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {['React Native', 'ASP.NET Core', 'SQL Server', 'REST APIs', 'Corporate Website', 'Mobile Dev'].map((tag) => (
+              {['React Native', 'Expo', 'Mobile API Integration', 'ASP.NET Core', 'MS SQL Server', 'RESTful APIs', 'Secure Auth (JWT/OAuth)', 'Agile/Scrum'].map((tag) => (
                 <span key={tag} style={{
                   padding: '4px 12px', borderRadius: '100px',
                   fontSize: '12px', fontWeight: 500,

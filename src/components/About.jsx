@@ -4,29 +4,29 @@ import { GraduationCap, Code2, Cpu, Globe } from 'lucide-react';
 const HIGHLIGHTS = [
   {
     icon: GraduationCap,
-    title: 'Final-Year IT Student',
-    desc: 'Pursuing Information Technology with a strong foundation in software engineering principles.',
+    title: 'B.Tech in IT (CGPA: 8.67)',
+    desc: 'Information Technology undergraduate at SRMS CET, AKTU with strong CS fundamentals (DSA, OOP, DBMS, Networks).',
     color: '#2563eb',
     bg: 'rgba(37,99,235,0.07)',
   },
   {
     icon: Code2,
-    title: '6+ Projects Built',
-    desc: 'From AI-powered apps to full-stack SaaS platforms across mobile and web.',
+    title: 'Mobile Engineering',
+    desc: 'Production experience engineering cross-platform mobile architectures using React Native, Expo, and native API integrations.',
     color: '#7c3aed',
     bg: 'rgba(124,58,237,0.07)',
   },
   {
     icon: Cpu,
-    title: 'AI & ML Integration',
-    desc: 'Hands-on experience with LLMs, RAG architecture, vector databases, and TensorFlow.',
+    title: 'Backend & Enterprise APIs',
+    desc: 'Designing secure workflows via ASP.NET Core, RESTful APIs, JWT/OAuth authentication, and SQL Server pipelines.',
     color: '#d97706',
     bg: 'rgba(217,119,6,0.07)',
   },
   {
     icon: Globe,
-    title: 'Full Stack Proficiency',
-    desc: 'React Native, Next.js, ASP.NET Core, Node.js, SQL Server, MongoDB, and more.',
+    title: 'Web & AI Architectures',
+    desc: 'Proficient in React.js, Next.js, Vite, Tailwind CSS, Supabase pgvector, and high-speed vector retrieval pipelines.',
     color: '#059669',
     bg: 'rgba(5,150,105,0.07)',
   },
@@ -92,21 +92,21 @@ export default function About() {
                 color: 'var(--color-text-secondary)',
                 lineHeight: 1.75,
               }}>
-                Final-year Information Technology student with experience developing cross-platform mobile applications, full-stack web platforms, and AI-powered software solutions.
+                Information Technology undergraduate with hands-on production experience engineering cross-platform mobile architectures and scalable backend solutions.
               </p>
               <p style={{
                 fontSize: 'clamp(14.5px, 1.8vw, 16px)',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 1.75,
               }}>
-                Currently working as an <strong style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>Android App Developer Intern at Eccura Technologies</strong>, contributing to mobile application development, backend integration, UI implementation, testing, and deployment workflows.
+                Currently working as an <strong style={{ color: 'var(--color-text-primary)', fontWeight: 600 }}>Android App Developer Intern at Eccura Technologies Pvt. Ltd.</strong>, developing 2+ cross-platform mobile application modules using React Native, building 10+ highly reusable UI components, and integrating 5+ secure REST API endpoints with the ASP.NET Core and SQL Server backend layer.
               </p>
               <p style={{
                 fontSize: 'clamp(14.5px, 1.8vw, 16px)',
                 color: 'var(--color-text-secondary)',
                 lineHeight: 1.75,
               }}>
-                Passionate about Software Engineering, Mobile Development, Full Stack Development, System Design, and building scalable software systems that solve real-world problems.
+                Track record of shipping production-ready mobile features and deploying applications directly to the Google Play Store, supported by rigorous foundations in Data Structures &amp; Algorithms (DSA), Object-Oriented Programming (OOP), DBMS, and Computer Networks.
               </p>
             </div>
           </AnimatedSection>
@@ -114,7 +114,7 @@ export default function About() {
           {/* Interests tags */}
           <AnimatedSection direction="up" delay={200}>
             <div style={{ marginTop: '28px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-              {['Software Engineering', 'Mobile Development', 'Full Stack', 'System Design', 'AI Integration', 'Open Source'].map((tag) => (
+              {['React Native & Expo', 'Mobile API Integration', 'ASP.NET Core', 'MS SQL Server', 'React.js & Next.js', 'DSA & OOP'].map((tag) => (
                 <span key={tag} style={{
                   padding: '6px 14px', borderRadius: '100px',
                   fontSize: '12.5px', fontWeight: 500,

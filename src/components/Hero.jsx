@@ -3,10 +3,10 @@ import { ArrowDown, Download, Mail, MapPin, Briefcase } from 'lucide-react';
 import resumePdf from '../assets/nishthagupta-resume.pdf';
 
 const STATS = [
-  { value: '8+', label: 'Projects Built' },
-  { value: '15+', label: 'Technologies' },
-  { value: '1', label: 'Published Android App' },
-  { value: '1', label: 'Client Website Live' },
+  { value: '1', label: 'Google Play App' },
+  { value: '2+', label: 'Mobile Modules' },
+  { value: '10+', label: 'Reusable Components' },
+  { value: '5+', label: 'Secure REST APIs' },
 ];
 
 function TypewriterText({ texts, speed = 60, pause = 2000 }) {
@@ -254,10 +254,10 @@ export default function Hero() {
         }}>
           <TypewriterText
             texts={[
-              'Android App Developer',
-              'Full-Stack Engineer',
-              'Corporate Website Builder',
-              'React Native Developer',
+              'Mobile & Full-Stack Engineer',
+              'React Native & Expo Developer',
+              'Enterprise API & Backend Builder',
+              'Android Application Engineer',
             ]}
             speed={65}
             pause={2200}
@@ -268,12 +268,12 @@ export default function Hero() {
         <p style={{
           fontSize: 'clamp(14px, 2vw, 17px)',
           color: 'var(--color-text-secondary)',
-          maxWidth: '660px',
+          maxWidth: '620px',
           margin: '0 auto 16px',
           lineHeight: 1.7,
           fontWeight: 400,
         }}>
-          Software developer building real-world web and mobile products — from corporate client websites to Android apps published on Google Play — using React Native, ASP.NET Core, Next.js, and modern web technologies.
+          Building production-ready cross-platform mobile apps with React Native &amp; Expo, backed by secure ASP.NET Core APIs and scalable enterprise data pipelines.
         </p>
 
         {/* Location */}
